@@ -1,0 +1,34 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Quitar estilos por defecto en listas */
+ul, ol {
+    list-style: none;
+}
+
+/* Quitar estilos en enlaces */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Quitar estilos en inputs y botones */
+button, input, select, textarea {
+    font: inherit;
+    border: none;
+    outline: none;
+    background: none;
+}

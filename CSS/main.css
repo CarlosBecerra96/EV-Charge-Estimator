@@ -1,0 +1,221 @@
+body {
+  font-family: "DM Sans", sans-serif;
+  color: #E8EDE9;
+  background: #0D0F0E;
+}
+
+.ev-app {
+  min-height: 780px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.ev-body {
+  padding: 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.ev-card {
+  background: #161A17;
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 20px 22px;
+}
+
+.ev-card-full {
+  grid-column: 1/-1;
+}
+
+.ev-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px 14px;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.07);
+}
+
+.ev-logo {
+  font-family: "Space Mono", monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #5AE68A;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.ev-logo .ev-logo-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #5AE68A;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.ev-badge {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(90, 230, 138, 0.1);
+  color: #5AE68A;
+  border: 0.5px solid rgba(90, 230, 138, 0.25);
+  font-weight: 500;
+}
+
+.ev-battery-visual {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.ev-batt-icon {
+  position: relative;
+  width: 52px;
+  height: 26px;
+}
+
+.ev-batt-body {
+  width: 46px;
+  height: 26px;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  background: #0D0F0E;
+  position: relative;
+}
+
+.ev-batt-fill {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  bottom: 2px;
+  width: 25%;
+  background: #E05A5A;
+  border-radius: 3px;
+  transition: width 0.4s;
+}
+
+.ev-batt-pct {
+  font-family: "Space Mono", monospace;
+  font-size: 22px;
+  font-weight: 700;
+  color: #E8EDE9;
+}
+
+.ev-slider-wrap {
+  position: relative;
+  padding: 4px 0 0;
+}
+
+.ev-range {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(to right, #E05A5A 0%, #E05A5A 25%, #2A2F2C 25%, #2A2F2C 100%);
+  cursor: pointer;
+}
+
+.ev-range.green-track {
+  background: linear-gradient(to right, #5AE68A 0%, #5AE68A 80%, #2A2F2C 80%, #2A2F2C 100%);
+}
+
+.ev-range::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #E8EDE9;
+  border: 2px solid #0D0F0E;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.ev-charger-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.ev-charger-opt {
+  background: #0D0F0E;
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 12px 10px;
+  text-align: center;
+  cursor: pointer;
+}
+.ev-charger-opt.active {
+  border-color: #5AE68A;
+  background: rgba(90, 230, 138, 0.07);
+}
+.ev-charger-opt.active .ev-charger-name {
+  color: #5AE68A;
+}
+
+.ev-charger-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: #8A9E8E;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+}
+
+.ev-result-card {
+  background: linear-gradient(135deg, #0E1F15 0%, #101A13 100%);
+  border: 0.5px solid rgba(90, 230, 138, 0.2);
+  border-radius: 16px;
+  padding: 24px 26px;
+  grid-column: 1/-1;
+}
+
+.ev-result-time {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+.ev-result-time .ev-result-num {
+  font-family: "Space Mono", monospace;
+  font-size: 48px;
+  font-weight: 700;
+  color: #5AE68A;
+}
+.ev-result-time .ev-result-unit {
+  font-size: 16px;
+  color: #8A9E8E;
+}
+
+.ev-cta-btn {
+  width: 100%;
+  padding: 14px;
+  background: #5AE68A;
+  color: #0A1A0D;
+  border: none;
+  border-radius: 12px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,31 @@
+.ev-charger-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.ev-charger-opt {
+    background: $bg-dark;
+    border: 0.5px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 12px 10px;
+    text-align: center;
+    cursor: pointer;
+
+&.active {
+    border-color: $primary-color;
+    background: rgba(90,230,138,0.07);
+
+    .ev-charger-name {
+        color: $primary-color;
+    }
+}
+}
+
+.ev-charger-name {
+    font-size: 11px;
+    font-weight: 600;
+    color: #8A9E8E;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+}

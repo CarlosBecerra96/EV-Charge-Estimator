@@ -1,0 +1,29 @@
+.ev-slider-wrap {
+    position: relative;
+    padding: 4px 0 0;
+}
+
+.ev-range {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background: linear-gradient(to right, $accent-red 0%, $accent-red 25%, #2A2F2C 25%, #2A2F2C 100%);
+    cursor: pointer;
+}
+
+.ev-range.green-track {
+    background: linear-gradient(to right, $primary-color 0%, $primary-color 80%, #2A2F2C 80%, #2A2F2C 100%);
+}
+
+.ev-range::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: $text-light;
+    border: 2px solid $bg-dark;
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.2);
+}

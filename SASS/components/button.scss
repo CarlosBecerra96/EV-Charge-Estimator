@@ -1,0 +1,17 @@
+.ev-cta-btn {
+    width: 100%;
+    padding: 14px;
+    background: $primary-color;
+    color: #0A1A0D;
+    border: none;
+    border-radius: 12px;
+    font-family: $font-main;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}

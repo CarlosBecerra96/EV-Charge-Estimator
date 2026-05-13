@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoltCalc - EV Charge Estimator</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="JS/main.js"></script>
+</head>
+
+<body>
+    <div class="ev-app">
+    <!-- Topbar -->
+    <div class="ev-topbar">
+        <div class="ev-logo">
+            <div class="ev-logo-dot"></div>
+            VOLTCALC
+        </div>
+        <div class="ev-badge">
+            <i class="ti ti-bolt" aria-hidden="true"></i> EV Charge Estimator
+        </div>
+    </div>
+
+    <!-- Body -->
+    <div class="ev-body">
+
+        <!-- Vehicle Card -->
+        <div class="ev-card">
+            <div class="ev-section-label">Your vehicle</div>
+            <div class="ev-field-label">Car model</div>
+            <div class="ev-select-row">
+            <i class="ti ti-car" aria-hidden="true"></i>
+            <span class="ev-select-text">Tesla Model 3 Long Range</span>
+            <i class="ti ti-chevron-down ev-select-arrow" aria-hidden="true"></i>
+            </div>
+            <div class="ev-stats">
+            <div class="ev-stat-box">
+                <div class="ev-stat-val">82</div>
+                <div class="ev-stat-lbl">kWh battery</div>
+            </div>
+            <div class="ev-stat-box">
+                <div class="ev-stat-val">250</div>
+                <div class="ev-stat-lbl">mi range</div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Battery State -->
+        <div class="ev-card">
+            <div class="ev-section-label">Battery state</div>
+            <div class="ev-battery-visual">
+            <div class="ev-batt-icon">
+                <div class="ev-batt-body">
+                <div class="ev-batt-fill" id="battFill"></div>
+                </div>
+                <div class="ev-batt-cap"></div>
+            </div>
+            <div>
+                <div class="ev-batt-pct" id="battPctLabel">25%</div>
+                <div class="ev-batt-sub">current charge</div>
+            </div>
+            </div>
+            <div class="ev-field-label">Current battery level</div>
+            <div class="ev-slider-wrap">
+            <input class="ev-range" type="range" min="0" max="100" value="25" id="currentBatt" step="1">
+            <div class="ev-range-labels"><span>0%</span><span>50%</span><span>100%</span></div>
+            </div>
+        </div>
+
+        <!-- Target Charge -->
+        <div class="ev-card">
+            <div class="ev-section-label">Target charge</div>
+            <div class="ev-target-display">
+            <span id="targetLabel">80%</span>
+            <span class="ev-target-sub">target</span>
+            </div>
+            <div class="ev-slider-wrap">
+            <input class="ev-range green-track" type="range" min="0" max="100" value="80" id="targetBatt" step="1">
+            <div class="ev-range-labels"><span>0%</span><span>50%</span><span>100%</span></div>
+            </div>
+            <div class="ev-tip">
+            <i class="ti ti-info-circle" aria-hidden="true"></i>
+            Recommended: stop at 80% for daily use
+            </div>
+        </div>
+
+        <!-- Charger Type -->
+        <div class="ev-card">
+            <div class="ev-section-label">Charger type</div>
+            <div class="ev-charger-grid">
+            <div class="ev-charger-opt">
+                <div class="ev-charger-name">Level 1</div>
+                <div class="ev-charger-kw">1.4</div>
+                <div class="ev-charger-desc">kW · 120V</div>
+            </div>
+            <div class="ev-charger-opt active">
+                <div class="ev-charger-name">Level 2</div>
+                <div class="ev-charger-kw">11</div>
+                <div class="ev-charger-desc">kW · 240V</div>
+            </div>
+            <div class="ev-charger-opt">
+                <div class="ev-charger-name">DC Fast</div>
+                <div class="ev-charger-kw">150</div>
+                <div class="ev-charger-desc">kW · CCS</div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Result Card -->
+        <div class="ev-result-card">
+            <div class="ev-result-top">
+            <div>
+                <div class="ev-result-label">Estimated charge time</div>
+                <div class="ev-result-time">
+                <span class="ev-result-num" id="resultHours">5</span>
+                <span class="ev-result-unit">h</span>
+                <span class="ev-result-num" id="resultMins">00</span>
+                <span class="ev-result-unit">min</span>
+                </div>
+                <div class="ev-result-sub" id="resultSub">charging 25% → 80% · adding 45.1 kWh</div>
+            </div>
+            <div class="ev-result-meta">
+                <div class="ev-meta-pill">11 kW</div>
+                <div class="ev-meta-pill">~9.4 kg CO₂</div>
+            </div>
+            </div>
+
+            <div class="ev-progress-bar-wrap">
+            <div class="ev-progress-bar" id="progressBar"></div>
+            </div>
+            <div class="ev-prog-labels">
+            <span id="progFrom">25%</span>
+            <span id="progTo">80%</span>
+            </div>
+
+            <div class="ev-stats-row">
+            <div class="ev-stat">
+                <div class="ev-stat-val" id="kwAdded">45.1 kWh</div>
+                <div class="ev-stat-lbl">energy added</div>
+            </div>
+            <div class="ev-stat">
+                <div class="ev-stat-val" id="miAdded">+138 mi</div>
+                <div class="ev-stat-lbl">range added</div>
+            </div>
+            <div class="ev-stat">
+                <div class="ev-stat-val" id="costEst">~$7.20</div>
+                <div class="ev-stat-lbl">est. cost</div>
+            </div>
+            </div>
+
+            <button class="ev-cta-btn">
+            <i class="ti ti-calendar-plus" aria-hidden="true"></i>
+            Set charging reminder
+            </button>
+        </div>
+
+    </div>
+  </div>
+    
+</body>
+
+</html>

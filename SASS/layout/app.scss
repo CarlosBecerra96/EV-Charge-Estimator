@@ -1,0 +1,21 @@
+.ev-app {
+    min-height: 780px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+.ev-body {
+    padding: 28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.ev-card {
+    background: $bg-card;
+    border: 0.5px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 20px 22px;
+}
+.ev-card-full {
+    grid-column: 1 / -1;
+}

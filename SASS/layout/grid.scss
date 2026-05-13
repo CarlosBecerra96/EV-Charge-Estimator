@@ -1,0 +1,22 @@
+// Grid general para el body
+.ev-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 28px;
+}
+
+// Grilla para opciones de cargador
+.ev-charger-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+// Grilla para estadísticas
+.ev-stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 16px;
+}
