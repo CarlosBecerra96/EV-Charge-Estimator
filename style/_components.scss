@@ -1,0 +1,118 @@
+// _components.scss
+@use 'variables' as *;
+
+// Hero
+.hero {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    &__icon  { font-size: 3rem; display: block; }
+
+    &__title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: $color-accent;
+        margin: 0.25rem 0;
+    }
+
+    &__sub {
+        color: $color-muted;
+        font-size: 0.95rem;
+    }
+}
+
+// Tarjeta principal
+.card {
+    background: $color-surface;
+    border-radius: $radius;
+    padding: 2rem;
+    box-shadow: $shadow;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+// Campos del formulario
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    &__label {
+        font-size: 0.85rem;
+        color: $color-muted;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    &__input,
+    &__select {
+        background: $color-bg;
+        border: 1px solid rgba($color-accent, 0.3);
+        border-radius: 8px;
+        color: $color-text;
+        padding: 0.65rem 0.9rem;
+        font-size: 1rem;
+        outline: none;
+        transition: border-color 0.2s;
+
+        &:focus { border-color: $color-accent; }
+    }
+
+    &__select option { background: $color-surface; }
+}
+
+// Botón
+.btn {
+    background: linear-gradient(135deg, $color-accent, $color-accent2);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.85rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.1s;
+
+    &:hover  { opacity: 0.9; }
+    &:active { transform: scale(0.98); }
+}
+
+// Resultados
+.result {
+    border-top: 1px solid rgba($color-accent, 0.2);
+    padding-top: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__label { color: $color-muted; font-size: 0.9rem; }
+
+    &__value {
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: $color-accent;
+    }
+
+    &__value--accent {
+        color: $color-accent2;
+        font-size: 1.3rem;
+    }
+
+    &__badge {
+        font-size: 0.7rem;
+        background: rgba($color-accent2, 0.2);
+        color: $color-accent2;
+        border-radius: 4px;
+        padding: 0.1rem 0.4rem;
+        margin-left: 0.4rem;
+        vertical-align: middle;
+        font-weight: 500;
+    }
+}

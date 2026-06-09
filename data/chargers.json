@@ -1,0 +1,6 @@
+[
+    { "type": "Nivel 1",        "power": 1.4,  "description": "Enchufe doméstico estándar" },
+    { "type": "Nivel 2",        "power": 3.3,  "description": "Cargador Pared carga lenta (110w)" },
+    { "type": "Nivel 3",        "power": 7.2,  "description": "Estación pública o wallbox" },
+    { "type": "Carga Rápida DC","power": 50,   "description": "Estación de carga rápida" }
+]
