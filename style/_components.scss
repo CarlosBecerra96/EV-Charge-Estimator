@@ -116,3 +116,36 @@
         font-weight: 500;
     }
 }
+
+// Vista previa del carro seleccionado
+.car-preview {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba($color-accent, 0.08);
+    border: 1px solid rgba($color-accent, 0.2);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-top: 0.5rem;
+
+    &__icon {
+        font-size: 1.8rem;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+    }
+
+    &__name {
+        font-weight: 600;
+        color: $color-text;
+        font-size: 0.95rem;
+    }
+
+    &__battery {
+        font-size: 0.85rem;
+        color: $color-muted;
+    }
+}

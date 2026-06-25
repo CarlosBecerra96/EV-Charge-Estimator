@@ -1,0 +1,20 @@
+[
+    { "brand": "Tesla",     "model": "Model 3 Standard Range", "battery": 57.5 },
+    { "brand": "Tesla",     "model": "Model 3 Long Range",     "battery": 75   },
+    { "brand": "Tesla",     "model": "Model Y Standard Range",  "battery": 62.5 },
+    { "brand": "Tesla",     "model": "Model Y Long Range",      "battery": 75   },
+    { "brand": "Tesla",     "model": "Model S",                 "battery": 100  },
+    { "brand": "Tesla",     "model": "Model X",                 "battery": 100  },
+
+    { "brand": "BYD", "model": "Yuan (47 kWh)",          "battery": 47    },
+    { "brand": "BYD", "model": "Yuan Pro (45 kWh)",       "battery": 45.12 },
+    { "brand": "BYD", "model": "Yuan Plus GL (50 kWh)",   "battery": 49.92 },
+    { "brand": "BYD", "model": "Yuan Plus GS (60 kWh)",   "battery": 60.48 },
+    { "brand": "BYD", "model": "Dolphin",                 "battery": 45    },
+    { "brand": "BYD", "model": "Seal",                    "battery": 82.5  },
+
+    { "brand": "Nissan",    "model": "Leaf",       "battery": 40 },
+    { "brand": "Chevrolet", "model": "Bolt EV",     "battery": 65 },
+    { "brand": "Hyundai",   "model": "Kona EV",     "battery": 64 },
+    { "brand": "Renault",   "model": "Zoe",         "battery": 52 }
+]

@@ -125,6 +125,34 @@ body {
   font-weight: 500;
 }
 
+.car-preview {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(0, 212, 170, 0.08);
+  border: 1px solid rgba(0, 212, 170, 0.2);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-top: 0.5rem;
+}
+.car-preview__icon {
+  font-size: 1.8rem;
+}
+.car-preview__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.car-preview__name {
+  font-weight: 600;
+  color: #e8eaf0;
+  font-size: 0.95rem;
+}
+.car-preview__battery {
+  font-size: 0.85rem;
+  color: #8a8fa8;
+}
+
 .container {
   width: 100%;
   max-width: 480px;

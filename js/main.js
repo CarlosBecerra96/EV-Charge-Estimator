@@ -1,5 +1,6 @@
 import { calculateChargeTime, calculateEndTime } from './battery.js';
 import { loadChargers } from './charger.js';
+import { loadCars } from './car.js';
 
 // Toastify viene del CDN, disponible como variable global
 
@@ -9,17 +10,17 @@ import { loadChargers } from './charger.js';
  * @param {'success'|'error'} type - Tipo de notificación
  */
 function showNotification(message, type = 'success') {
-  Toastify({
-    text: message,
-    duration: 3000,
-    gravity: 'top',
-    position: 'right',
-    style: {
-      background: type === 'success' ? '#27ae60' : '#c0392b',
-      borderRadius: '8px',
-      fontFamily: 'inherit'
-    }
-  }).showToast();
+    Toastify({
+        text: message,
+        duration: 3000,
+        gravity: 'top',
+        position: 'right',
+        style: {
+        background: type === 'success' ? '#27ae60' : '#c0392b',
+        borderRadius: '8px',
+        fontFamily: 'inherit'
+        }
+    }).showToast();
 }
 
 /**
@@ -28,23 +29,28 @@ function showNotification(message, type = 'success') {
 function formatTime(hours) {
     const h = Math.floor(hours);
     const min = Math.round((hours - h) * 60);
-        if (h === 0) return `${min} min`;
-        if (min === 0) return `${h}h`;
-        return `${h}h ${min}min`;
+    if (h === 0) return `${min} min`;
+    if (min === 0) return `${h}h`;
+    return `${h}h ${min}min`;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Carga los cargadores desde el JSON al iniciar
-  loadChargers();
+  // Carga los cargadores y los modelos de carro desde sus JSON al iniciar
+    loadChargers();
+    loadCars();
 
-  document.getElementById('calculateBtn').addEventListener('click', () => {
-    const current      = parseInt(document.getElementById('current').value);
-    const target       = parseInt(document.getElementById('target').value);
-    const chargerPower = parseFloat(document.getElementById('charger').value);
-    const startTime    = document.getElementById('startTime').value || '22:00';
-    const batteryCapacity = 60; // kWh
+    document.getElementById('calculateBtn').addEventListener('click', () => {
+    const current         = parseInt(document.getElementById('current').value);
+    const target           = parseInt(document.getElementById('target').value);
+    const chargerPower     = parseFloat(document.getElementById('charger').value);
+    const batteryCapacity  = parseFloat(document.getElementById('carModel').value);
+    const startTime         = document.getElementById('startTime').value || '22:00';
 
     // Validaciones
+    if (isNaN(batteryCapacity)) {
+        showNotification('⚠️ Selecciona el modelo de tu vehículo', 'error');
+        return;
+    }
     if (isNaN(current) || isNaN(target) || isNaN(chargerPower)) {
         showNotification('⚠️ Completa todos los campos', 'error');
         return;
@@ -94,5 +100,5 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
 
     showNotification('✅ Cálculo realizado con éxito', 'success');
-  });
+    });
 });
